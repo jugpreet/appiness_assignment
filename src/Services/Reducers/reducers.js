@@ -1,5 +1,5 @@
 import { login, tableData, Logout, Error } from "../types";
-import * as Data from "../JosonFile";
+import * as Data from "../Data";
 //import { setError } from "../action";
 const initialState = {
   LoginData: {},
