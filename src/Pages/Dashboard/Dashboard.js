@@ -3,7 +3,7 @@ import { routes } from "../../Config/routes";
 import { useHistory } from "react-router";
 import { useEffect } from "react";
 import './Dashboard.css'
-import { tableDataAction,logout } from "../../Services/action";
+import { tableDataAction, onLogout } from "../../Services/action";
 const Dashboard = () => {
   const tableData = useSelector((state) => state.data?.tableData?.user);
   const dispatch = useDispatch();
@@ -14,18 +14,9 @@ const Dashboard = () => {
 // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    
-    return () => {
-      localStorage.clear();
-      dispatch(logout())
-    }
-// eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
   const handleLogout = () => {
     try {
-      localStorage.clear();
-    dispatch(logout())
+      dispatch(onLogout())
     history.push(routes.login.path);      
     } catch (error) {
      console.log(error); 

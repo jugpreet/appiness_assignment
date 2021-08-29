@@ -20,7 +20,7 @@ const LoginPage = () => {
   }, []);
 
   useEffect(() => {
-    if (Object.keys(state).length > 0) {
+    if (Object.keys(state)?.length > 0) {
       history.push(routes.dashboard.path);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

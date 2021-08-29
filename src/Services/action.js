@@ -11,12 +11,10 @@ export const loginData = (data) => dispatch => {
    }
 
    export const tableDataAction = ()=> ({
-   
      type: tableData,
-   
    })
 
-   export const logout=()=>({
+ const logout=()=>({
        type: Logout
    })
 
@@ -24,3 +22,8 @@ export const loginData = (data) => dispatch => {
     type: Error,
     payload: data,
   });
+
+  export const onLogout=()=>(dispatch)=>{
+    localStorage.clear();
+    dispatch(logout())
+  }
